@@ -31,14 +31,18 @@ type Result struct {
 }
 
 func main() {
-	db, err = gorm.Open("mysql", "root:@/e_commerce?charset=utf8&parseTime=true")
-	if err != nil {
-		log.Println("Connection Fail", err)
-	} else {
-		log.Println("Connection Estabilished")
-	}
+		// dsn := "root:123456@tcp(127.0.0.1:3306)/amr_starter?charset=utf8mb4&parseTime=True&loc=Local"
+	// db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
-	db.AutoMigrate(&Products{})
+	// db, err = gorm.Open("mysql", dsn)
+	// db, err = gorm.Open("mysql", "root:@/e_commerce?charset=utf8&parseTime=true")
+	// if err != nil {
+	// 	log.Println("Connection Fail", err)
+	// } else {
+	// 	log.Println("Connection Estabilished")
+	// }
+
+	// db.AutoMigrate(&Products{})
 	handleRequests()
 }
 
